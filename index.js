@@ -60,6 +60,32 @@ class HashMap {
 
     return zeroCount;
   }
+
+  clear() {
+    bucket.forEach((element, index) => {
+      bucket[index] = 0;
+    });
+  }
+
+  keys() {
+    // Same problem, see methods above
+  }
+
+  values() {
+    const values = [];
+
+    bucket.forEach((element) => {
+      if (element !== 0) {
+        values.push(element);
+      }
+    });
+
+    return values;
+  }
+
+  entries() {
+    // Same problem, see methods above
+  }
 }
 
 // Testing the script...
@@ -75,5 +101,17 @@ console.log(bucket);
 
 console.log("Return value for 'Bozo'...");
 console.log(map.get("Bozo"));
+
+console.log(`Stored keys in the array: ${map.length()}`);
+
+console.log("Set key 'Peter' to 'lame'...");
+map.set("Peter", "lame");
+console.log(bucket);
+
+console.log("Get an array with all the values...");
+console.log(map.values());
+
+console.log("Clearing bucket...");
+map.clear();
 
 console.log(`Stored keys in the array: ${map.length()}`);
