@@ -29,6 +29,13 @@ class HashMap {
     // Overwrite old value when key already exists
     // Implement bucket growing when load factor is reached
   }
+
+  get(key) {
+    const keyHashed = this.hash(key) % remainder;
+    return bucket[keyHashed];
+    // Todo:
+    // When key is not found, return null
+  }
 }
 
 // Testing the script...
@@ -41,3 +48,6 @@ console.log(map.hash("Bozo"));
 console.log("Set key 'Bozo' to 'cool'...");
 map.set("Bozo", "cool");
 console.log(bucket);
+
+console.log("Return value for 'Bozo'...");
+console.log(map.get("Bozo"));
