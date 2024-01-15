@@ -7,6 +7,8 @@ const bucket = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let remainder = 16;
 
 class HashMap {
+  // Todo - Question:
+  // Implement array with linked list here?
   constructor() {}
 
   hash(str) {
@@ -36,6 +38,28 @@ class HashMap {
     // Todo:
     // When key is not found, return null
   }
+
+  has(key) {
+    const keyHashed = this.hash(key) % remainder;
+    // I need to track the keys, not just the 16 hashes
+    // Not sure if i got the assignment right
+  }
+
+  remove(key) {
+    // Same problem, see method above
+  }
+
+  length() {
+    let zeroCount = 0;
+
+    bucket.forEach((element) => {
+      if (element !== 0) {
+        zeroCount++;
+      }
+    });
+
+    return zeroCount;
+  }
 }
 
 // Testing the script...
@@ -51,3 +75,5 @@ console.log(bucket);
 
 console.log("Return value for 'Bozo'...");
 console.log(map.get("Bozo"));
+
+console.log(`Stored keys in the array: ${map.length()}`);
