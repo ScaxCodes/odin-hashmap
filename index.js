@@ -88,6 +88,11 @@ class HashMap {
   }
 }
 
+// Problem erkannt, es mangelt an der linked list / nodes
+// Evtl. hier aufhoeren, mehrwert liegt in Vorzeigeprojekten, nicht in Kleinigkeiten verrennen
+// Wie Hashmaps funktionieren habe ich ja verstanden, selber bauen kein riesiger Mehrwert
+// Das Thema wird auch in einem DSA Kurs sicher nochmal vorkommen
+
 // Testing the script...
 console.log("Creating HashMap...");
 const map = new HashMap();
